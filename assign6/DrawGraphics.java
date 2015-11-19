@@ -5,29 +5,29 @@ import java.util.ArrayList;
 public class DrawGraphics {
     Bouncer movingSpriteOne;
     Bouncer movingSpriteTwo;
-    NotBouncer movingSpriteThree;
-    NotBouncer movingSpriteFour;
+    StraightMover movingSpriteThree;
+    StraightMover movingSpriteFour;
     
-    ArrayList<Rectangle> rekts = new ArrayList <>();
-    ArrayList<Rectangle> StraightMovers = new ArrayList <>();    
+    ArrayList<Rectangle> Moving = new ArrayList <>();
+    ArrayList<Rectangle> NotMoving = new ArrayList <>();    
     
     /** Initializes this class for drawing. */
     public DrawGraphics() {
         
-        rekts.add(new Rectangle(15, 20, Color.RED));
-        movingSpriteOne = new Bouncer(100, 170, rekts.get(0));
+        Moving.add(new Rectangle(15, 20, Color.RED));
+        movingSpriteOne = new Bouncer(100, 170, Moving.get(0));
         movingSpriteOne.setMovementVector(3, 1);
         
-        rekts.add(new Rectangle(30, 40, Color.RED));
-        movingSpriteTwo = new Bouncer(10, 17, rekts.get(1));
+        Moving.add(new Rectangle(30, 40, Color.YELLOW));
+        movingSpriteTwo = new Bouncer(10, 17, Moving.get(1));
         movingSpriteTwo.setMovementVector(6, 2);        
         
-        StraightMovers.add(new Rectangle(15, 20, Color.BLUE));    
-        movingSpriteThree = new NotBouncer(50, 100, StraightMovers.get(0));
+        NotMoving.add(new Rectangle(15, 20, Color.BLUE));    
+        movingSpriteThree = new StraightMover(50, 100, NotMoving.get(0));
         movingSpriteThree.setMovementVector(2, 2);
         
-        StraightMovers.add(new Rectangle(15, 20, Color.GREEN));    
-        movingSpriteFour = new NotBouncer(150, 150, StraightMovers.get(0));
+        NotMoving.add(new Rectangle(15, 20, Color.GREEN));    
+        movingSpriteFour = new StraightMover(150, 150, NotMoving.get(1));
         movingSpriteFour.setMovementVector(-2, -2);        
 
     }
